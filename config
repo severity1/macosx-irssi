@@ -1,0 +1,49 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  Freenode = {
+    type = "IRC";
+    autosendcmd = "/msg nickserv identify jepoy jepoy1212";
+  };
+};
+
+channels = (
+  { name = "##aws"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "##infra-talk"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#logstash"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#lopsa"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#mongodb"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#puppet"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#servergeeks"; chatnet = "Freenode"; autojoin = "Yes"; }
+  { name = "#startups"; chatnet = "Freenode"; autojoin = "Yes"; }
+);
+
+settings = {
+  core = { real_name = "Jepoy"; user_name = "jepoy"; nick = "jepoy"; };
+  "fe-text" = { actlist_sort = "refnum"; term_force_colors = "yes"; scrollback_time = "7day "; };
+  "fe-common/core" = { 
+	theme = "solarized-universal";
+	hilight_color = "= %R";
+  };
+};
+
+hilights = (
+        { text = "jepoy"; color = "%M"; nick = "yes"; word = "yes"; }
+);
+
+statusbar = {
+  items = {
+        lag = "{sb Lag: %m$0-%n}";
+        act = "{sb Act: $0-}";
+        more = "%k%3-- more --%n";
+  };
+};
